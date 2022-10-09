@@ -30,7 +30,7 @@ export default function Connect() {
   useEffect(() => {
     if (data) {
       setUser(data.user);
-      router.push('/er');
+      router.push('/ds3/standings');
 
       window.sessionStorage.setItem('_er_at', `${data.auth.access_token}`);
     }

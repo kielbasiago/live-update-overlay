@@ -17,6 +17,7 @@ const StyledHeader = styled(Header)`
   align-items: center;
   justify-content: space-between;
 `;
+const SiderLayout = styled(Layout)``;
 
 export const ERLayout: React.FC<ERLayoutProps> = ({ children }) => {
   return (
@@ -25,8 +26,8 @@ export const ERLayout: React.FC<ERLayoutProps> = ({ children }) => {
         <Image src="/0hitleague.png" alt="0 Hit League" width={48} height={37} />
         {/* <StyledMenu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} items={items1} /> */}
       </StyledHeader>
-      <Layout>
-        <Sider width={200} className="site-layout-background">
+      <SiderLayout>
+        {/* <Sider width={200} className="site-layout-background">
           <Menu
             mode="inline"
             defaultSelectedKeys={['1']}
@@ -34,7 +35,7 @@ export const ERLayout: React.FC<ERLayoutProps> = ({ children }) => {
             style={{ height: '100%', borderRight: 0 }}
           >
             <Menu.Item>
-              <Link href={'/er/standings'}>
+              <Link href={'/ds3/standings'}>
                 <div>
                   <UserOutlined />
                   Standings
@@ -42,7 +43,7 @@ export const ERLayout: React.FC<ERLayoutProps> = ({ children }) => {
               </Link>
             </Menu.Item>
           </Menu>
-        </Sider>
+        </Sider> */}
         <Layout style={{ padding: '0 24px 24px' }}>
           <Content
             className="site-layout-background"
@@ -55,7 +56,7 @@ export const ERLayout: React.FC<ERLayoutProps> = ({ children }) => {
             {children}
           </Content>
         </Layout>
-      </Layout>
+      </SiderLayout>
     </Layout>
   );
 };
