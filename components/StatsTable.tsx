@@ -22,31 +22,35 @@ const columns: TableColumnType<Standing>[] = [
     align: 'left'
   },
   {
-    title: 'MP',
+    title: 'Matches Played',
     dataIndex: 'matchesPlayed'
   },
   {
-    title: 'D',
+    title: 'Wins',
+    dataIndex: 'wins'
+  },
+  {
+    title: 'Draws',
     dataIndex: 'draws'
   },
   {
-    title: 'L',
+    title: 'Losses',
     dataIndex: 'losses'
   },
   {
-    title: 'GF',
+    title: 'Gates Finished',
     dataIndex: 'gatesFinished'
   },
   {
-    title: 'H',
+    title: 'Hits',
     dataIndex: 'hitsTaken'
   },
   {
-    title: 'Pts',
+    title: 'Points',
     dataIndex: 'points'
   },
   {
-    title: 'Last 5',
+    title: 'Last 5 Matches',
     dataIndex: 'lastFive',
     render: (lastFive: Standing['lastFive']) => {
       return (

@@ -60,7 +60,7 @@ export const data: Standing[] = [
     name: 'ItzCBD',
     matchesPlayed: 10,
     wins: 2,
-    draws: 52,
+    draws: 5,
     losses: 3,
     gatesFinished: 30,
     hitsTaken: 100,
@@ -87,12 +87,12 @@ export const data: Standing[] = [
     gatesFinished: 18,
     hitsTaken: 99,
     points: 12,
-    lastFive: ['win', 'win', 'win', 'win', 'win']
+    lastFive: ['draw', 'loss', 'win', 'loss', 'draw']
   },
   {
     name: 'The_Happy_Hob',
     matchesPlayed: 10,
-    wins: 11,
+    wins: 1,
     draws: 2,
     losses: 7,
     gatesFinished: 23,
