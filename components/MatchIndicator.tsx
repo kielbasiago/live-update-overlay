@@ -1,5 +1,6 @@
 import { CheckCircleFilled, CloseCircleFilled, MinusCircleFilled } from '@ant-design/icons';
 import styled from 'styled-components';
+
 type WinIndicatorProps = {
   status: 'win' | 'draw' | 'loss';
 };

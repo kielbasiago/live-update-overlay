@@ -15,7 +15,7 @@ const columns: TableColumnType<Standing>[] = [
     render: (name) => {
       return (
         <a href={`https://twitch.tv/${name}`} target={'_blank'} rel="noreferrer">
-          {name}
+          {name.replace(/[\s]/g, ' ')}
         </a>
       );
     },

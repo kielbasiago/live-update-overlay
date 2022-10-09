@@ -90,7 +90,7 @@ export const data: Standing[] = [
     lastFive: ['win', 'win', 'win', 'win', 'win']
   },
   {
-    name: 'The Happy Hob',
+    name: 'The_Happy_Hob',
     matchesPlayed: 10,
     wins: 11,
     draws: 2,

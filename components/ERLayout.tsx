@@ -1,13 +1,12 @@
 import { Layout, Menu } from 'antd';
-import type { MenuProps } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 import Link from 'next/link';
+import 'antd/dist/antd.css';
 
 const { Header, Content, Sider } = Layout;
-const { Item } = Menu;
 
 export type ERLayoutProps = {
   children: React.ReactNode;
