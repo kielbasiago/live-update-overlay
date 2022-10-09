@@ -1,20 +1,8 @@
-import { Anchor, TableColumnType, Table } from 'antd';
+import { TableColumnType, Table } from 'antd';
 import orderBy from 'lodash/orderBy';
 import { useMemo } from 'react';
+import { Standing } from '~/types';
 import { MatchIndicator } from './MatchIndicator';
-const { Link } = Anchor;
-
-type Standing = {
-  name: string;
-  matchesPlayed: number;
-  wins: number;
-  draws: number;
-  losses: number;
-  gatesFinished: number;
-  hitsTaken: number;
-  points: number;
-  lastFive: ('win' | 'loss' | 'draw')[];
-};
 
 export type StatsTableProps = {
   standings: Standing[];
@@ -74,7 +62,7 @@ const columns: TableColumnType<Standing>[] = [
 
 export const StatsTable = ({ standings }: StatsTableProps) => {
   const ordered = useMemo(() => orderBy(standings, (standing) => standing.points, 'desc'), [standings]);
-  return <Table columns={columns} dataSource={ordered} />;
+  return <Table columns={columns} bordered={true} dataSource={ordered} pagination={false} />;
 };
 
 export type StatsTable = typeof StatsTable;

@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import { useRouter } from 'next/router';
+import React, { useContext, useEffect } from 'react';
 import { User } from '~/model/user';
 
 export type AuthProviderData = {
@@ -13,8 +14,14 @@ const Context = React.createContext<AuthProviderData>({
   user: null
 });
 
-export const useProfile = () => {
+export const useProfile = (redirectOnFail = false) => {
+  const router = useRouter();
   const context = useContext(Context);
+  useEffect(() => {
+    if (redirectOnFail && !context.user) {
+      router.replace('/');
+    }
+  }, [context, redirectOnFail, router]);
   return context;
 };
 

@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useQuery } from 'react-query';
+import { User } from '~/model/user';
 import { ConnectResponse } from '~/types';
 import { useProfile } from '~/utils/AuthProvider';
 
@@ -14,9 +15,9 @@ const useAuthConnect = () => {
   const scope = fragment.get('scope');
 
   return useQuery<ConnectResponse>(['auth-connect', access_token, token_type, expires_in, scope], async () => {
-    const payload = { access_token, token_type, expires_in, scope };
-    const { data } = await axios.post<ConnectResponse>('/api/auth/connect', payload);
-    const { auth, user } = data;
+    const auth = { access_token, token_type, expires_in, scope };
+    const { data } = await axios.post<User>('/api/auth/connect', auth);
+    const user = data;
     return { auth, user };
   });
 };
@@ -31,7 +32,7 @@ export default function Connect() {
       setUser(data.user);
       router.push('/er');
 
-      window.sessionStorage.setItem('_er_at', data.auth.access_token);
+      window.sessionStorage.setItem('_er_at', `${data.auth.access_token}`);
     }
   }, [data, router, setUser]);
 
